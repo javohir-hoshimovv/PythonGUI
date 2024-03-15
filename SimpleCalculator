@@ -1,0 +1,59 @@
+import tkinter as tk
+
+def plus():
+    value1 = int(a.get())
+    value2 = int(b.get())
+    result = value1 + value2
+    label.config(text="Answer is: " + str(result))
+
+def subtract():
+    value1 = int(a.get())
+    value2 = int(b.get())
+    result = value1 - value2
+    label.config(text="Answer is: " + str(result))
+
+def multiply():
+    value1 = int(a.get())
+    value2 = int(b.get())
+    result = value1 * value2
+    label.config(text="Answer is: " + str(result))
+
+def divide():
+    value1 = int(a.get())
+    value2 = int(b.get())
+    result = value1 / value2
+    resultW = "%.3f" % result
+    label.config(text="Answer is: " + str(resultW))
+
+window = tk.Tk()
+
+frame = tk.Frame(window, height=20, bg="yellow")
+label = tk.Label(window, text="Simple Calculator")
+label.pack()
+frame.pack(fill=tk.X)
+
+label = tk.Label(window, text="Enter Number")
+label.pack()
+
+a = tk.Entry(window)
+a.pack()
+
+b = tk.Entry(window)
+b.pack()
+
+button1 = tk.Button(window, text="Add", command=plus)
+button1.grid(row=0, column=0, sticky="sw")
+
+button2 = tk.Button(window, text="Subtract", command=subtract)
+button2.grid(row=0, column=1, sticky="sw")
+
+button3 = tk.Button(window, text="Multiply", command=multiply)
+button3.grid(row=0, column=2, sticky="sw")
+
+button4 = tk.Button(window, text="Divide", command=divide)
+button4.grid(row=0, column=3, sticky="sw")
+
+label = tk.Label(window)
+label.pack()
+
+window.mainloop()
